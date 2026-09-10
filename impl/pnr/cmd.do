@@ -3,6 +3,7 @@
 -pn GW2A-LV18PG256C8/I7
 -cst C:\Users\Louis\Desktop\fpga\ VideoProc\src\ VideoProc.cst
 -cfg C:\Users\Louis\Desktop\fpga\ VideoProc\impl\pnr\device.cfg
+-sdc C:\Users\Louis\Desktop\fpga\ VideoProc\src\VideoProc.sdc
 -bit
 -tr
 -ph

@@ -63,7 +63,7 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 </tr>
 <tr>
 <td class="label">Timing Constraints File</td>
-<td>---</td>
+<td>C:\Users\Louis\Desktop\fpga\ VideoProc\src\VideoProc.sdc</td>
 </tr>
 <tr>
 <td class="label">Tool Version</td>
@@ -83,7 +83,7 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 </tr>
 <tr>
 <td class="label">Created Time</td>
-<td>Thu Sep 10 18:42:01 2026
+<td>Thu Sep 10 20:44:59 2026
 </td>
 </tr>
 <tr>
@@ -97,24 +97,24 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 <tr>
 <td class="label">Place & Route Process</td>
 <td>Running placement:
-   Placement Phase 0: CPU time = 0h 0m 0.009s, Elapsed time = 0h 0m 0.01s
-   Placement Phase 1: CPU time = 0h 0m 0.405s, Elapsed time = 0h 0m 0.405s
-   Placement Phase 2: CPU time = 0h 0m 0.007s, Elapsed time = 0h 0m 0.007s
+   Placement Phase 0: CPU time = 0h 0m 0.027s, Elapsed time = 0h 0m 0.028s
+   Placement Phase 1: CPU time = 0h 0m 0.432s, Elapsed time = 0h 0m 0.431s
+   Placement Phase 2: CPU time = 0h 0m 0.025s, Elapsed time = 0h 0m 0.025s
    Placement Phase 3: CPU time = 0h 0m 1s, Elapsed time = 0h 0m 1s
    Total Placement: CPU time = 0h 0m 2s, Elapsed time = 0h 0m 2s
 Running routing:
    Routing Phase 0: CPU time = 0h 0m 0s, Elapsed time = 0h 0m 0s
-   Routing Phase 1: CPU time = 0h 0m 0.67s, Elapsed time = 0h 0m 0.67s
-   Routing Phase 2: CPU time = 0h 0m 0.278s, Elapsed time = 0h 0m 0.278s
+   Routing Phase 1: CPU time = 0h 0m 0.615s, Elapsed time = 0h 0m 0.614s
+   Routing Phase 2: CPU time = 0h 0m 0.402s, Elapsed time = 0h 0m 0.402s
    Routing Phase 3: CPU time = 0h 0m 0s, Elapsed time = 0h 0m 0s
-   Total Routing: CPU time = 0h 0m 0.948s, Elapsed time = 0h 0m 0.948s
+   Total Routing: CPU time = 0h 0m 1s, Elapsed time = 0h 0m 1s
 Generate output files:
    CPU time = 0h 0m 4s, Elapsed time = 0h 0m 4s
 </td>
 </tr>
 <tr>
 <td class="label">Total Time and Memory Usage</td>
-<td>CPU time = 0h 0m 7s, Elapsed time = 0h 0m 7s, Peak memory usage = 511MB</td>
+<td>CPU time = 0h 0m 7s, Elapsed time = 0h 0m 7s, Peak memory usage = 487MB</td>
 </tr>
 </table>
 <br/>
@@ -129,12 +129,12 @@ Generate output files:
 </tr>
 <tr>
 <td class="label">Logic</td>
-<td>55/20736</td>
-<td><1%</td>
+<td>229/20736</td>
+<td>2%</td>
 </tr>
 <tr>
 <td class="label">&nbsp &nbsp --LUT,ALU,ROM16</td>
-<td>55(55 LUT, 0 ALU, 0 ROM16)</td>
+<td>229(205 LUT, 24 ALU, 0 ROM16)</td>
 <td>-</td>
 </tr>
 <tr>
@@ -144,7 +144,7 @@ Generate output files:
 </tr>
 <tr>
 <td class="label">Register</td>
-<td>26/16173</td>
+<td>92/16173</td>
 <td><1%</td>
 </tr>
 <tr>
@@ -154,7 +154,7 @@ Generate output files:
 </tr>
 <tr>
 <td class="label">&nbsp &nbsp --Logic Register as FF</td>
-<td>26/15552</td>
+<td>92/15552</td>
 <td><1%</td>
 </tr>
 <tr>
@@ -169,17 +169,17 @@ Generate output files:
 </tr>
 <tr>
 <td class="label">CLS</td>
-<td>32/10368</td>
-<td><1%</td>
+<td>134/10368</td>
+<td>2%</td>
 </tr>
 <tr>
 <td class="label">I/O Port</td>
-<td>7/207</td>
-<td>4%</td>
+<td>6/207</td>
+<td>3%</td>
 </tr>
 <tr>
 <td class="label">I/O Buf</td>
-<td>7</td>
+<td>6</td>
 <td>-</td>
 </tr>
 <tr>
@@ -189,7 +189,7 @@ Generate output files:
 </tr>
 <tr>
 <td class="label"> &nbsp &nbsp --Output Buf</td>
-<td>5</td>
+<td>4</td>
 <td>-</td>
 </tr>
 <tr>
@@ -219,7 +219,7 @@ Generate output files:
 </tr>
 <tr>
 <td class="label">bank 2</td>
-<td>1/20</td><td>5%</td>
+<td>0/20</td><td>0%</td>
 </tr>
 <tr>
 <td class="label">bank 3</td>
@@ -282,7 +282,7 @@ Generate output files:
 <tr>
 <td class="label">clock_pixel</td>
 <td>PRIMARY</td>
-<td> TR TL</td>
+<td> TR TL BR BL</td>
 </tr>
 <tr>
 <td class="label">HPD_d</td>
@@ -435,25 +435,6 @@ Generate output files:
 <td>NA</td>
 <td>NA</td>
 <td>2.5</td>
-</tr>
-<tr>
-<td class="label">connection_light</td>
-<td>-</td>
-<td>T15/2</td>
-<td>N</td>
-<td>out</td>
-<td>IOR7[A]</td>
-<td>RPLL1_T_in</td>
-<td>LVCMOS18</td>
-<td>8</td>
-<td>UP</td>
-<td>NA</td>
-<td>NA</td>
-<td>OFF</td>
-<td>NA</td>
-<td>OFF</td>
-<td>NA</td>
-<td>1.8</td>
 </tr>
 </table>
 <br/>
@@ -3113,18 +3094,18 @@ Generate output files:
 </tr>
 <tr>
 <td class="label">T15/2</td>
-<td>connection_light</td>
-<td>out</td>
+<td>-</td>
+<td>in</td>
 <td>IOR7[A]</td>
 <td>RPLL1_T_in</td>
 <td>LVCMOS18</td>
-<td>8</td>
+<td>NA</td>
 <td>UP</td>
+<td>ON</td>
+<td>NONE</td>
 <td>NA</td>
 <td>NA</td>
-<td>OFF</td>
 <td>NA</td>
-<td>OFF</td>
 <td>NA</td>
 <td>1.8</td>
 </tr>

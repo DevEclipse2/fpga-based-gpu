@@ -1,17 +1,16 @@
 GowinSynthesis start
 Running parser ...
 Analyzing Verilog file 'C:\Users\Louis\Desktop\fpga\ VideoProc\src\DriveDisplay.v'
-Analyzing Verilog file 'C:\Users\Louis\Desktop\fpga\ VideoProc\src\clock.v'
 Analyzing Verilog file 'C:\Users\Louis\Desktop\fpga\ VideoProc\src\LedClk.v'
+Analyzing Verilog file 'C:\Users\Louis\Desktop\fpga\ VideoProc\src\clock.v'
 Analyzing Verilog file 'C:\Users\Louis\Desktop\fpga\ VideoProc\src\top_module.v'
-Undeclared symbol 'reset', assumed default net type 'wire'("C:\Users\Louis\Desktop\fpga\ VideoProc\src\top_module.v":32)
+Analyzing Verilog file 'C:\Users\Louis\Desktop\fpga\ VideoProc\src\TMDSEncoder.v'
 Compiling module 'top'("C:\Users\Louis\Desktop\fpga\ VideoProc\src\top_module.v":1)
 Compiling module 'HDMI_clock'("C:\Users\Louis\Desktop\fpga\ VideoProc\src\clock.v":1)
 Compiling module 'DVI'("C:\Users\Louis\Desktop\fpga\ VideoProc\src\DriveDisplay.v":1)
 WARN  (EX3791) : Expression size 12 truncated to fit in target size 11("C:\Users\Louis\Desktop\fpga\ VideoProc\src\DriveDisplay.v":47)
 WARN  (EX3791) : Expression size 13 truncated to fit in target size 12("C:\Users\Louis\Desktop\fpga\ VideoProc\src\DriveDisplay.v":50)
-Compiling module 'led'("C:\Users\Louis\Desktop\fpga\ VideoProc\src\LedClk.v":1)
-WARN  (EX1998) : Net 'reset' does not have a driver("C:\Users\Louis\Desktop\fpga\ VideoProc\src\top_module.v":32)
+Compiling module 'TMDS_encoder'("C:\Users\Louis\Desktop\fpga\ VideoProc\src\TMDSEncoder.v":1)
 NOTE  (EX0101) : Current top module is "top"
 [5%] Running netlist conversion ...
 Running device independent optimization ...
@@ -29,7 +28,6 @@ Running technical mapping ...
 [75%] Tech-Mapping Phase 2 completed
 [80%] Tech-Mapping Phase 3 completed
 [90%] Tech-Mapping Phase 4 completed
-WARN  (NL0002) : The module "led" instantiated to "u_blinker" is swept in optimizing("C:\Users\Louis\Desktop\fpga\ VideoProc\src\top_module.v":34)
 [95%] Generate netlist file "C:\Users\Louis\Desktop\fpga\ VideoProc\impl\gwsynthesis\VideoProc.vg" completed
 [100%] Generate report file "C:\Users\Louis\Desktop\fpga\ VideoProc\impl\gwsynthesis\VideoProc_syn.rpt.html" completed
 GowinSynthesis finish

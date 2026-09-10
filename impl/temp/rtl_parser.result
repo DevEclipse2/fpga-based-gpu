@@ -1,5 +1,13 @@
 [
  {
+  "InstFile" : "C:/Users/Louis/Desktop/fpga/ VideoProc/src/LedClk.v",
+  "InstLine" : 1,
+  "InstName" : "led",
+  "ModuleFile" : "C:/Users/Louis/Desktop/fpga/ VideoProc/src/LedClk.v",
+  "ModuleLine" : 1,
+  "ModuleName" : "led"
+ },
+ {
   "InstFile" : "C:/Users/Louis/Desktop/fpga/ VideoProc/src/top_module.v",
   "InstLine" : 1,
   "InstName" : "top",
@@ -9,7 +17,7 @@
   "SubInsts" : [
    {
     "InstFile" : "C:/Users/Louis/Desktop/fpga/ VideoProc/src/top_module.v",
-    "InstLine" : 15,
+    "InstLine" : 14,
     "InstName" : "u_pll",
     "ModuleFile" : "C:/Users/Louis/Desktop/fpga/ VideoProc/src/clock.v",
     "ModuleLine" : 1,
@@ -17,19 +25,37 @@
    },
    {
     "InstFile" : "C:/Users/Louis/Desktop/fpga/ VideoProc/src/top_module.v",
-    "InstLine" : 21,
+    "InstLine" : 20,
     "InstName" : "u_DVI",
     "ModuleFile" : "C:/Users/Louis/Desktop/fpga/ VideoProc/src/DriveDisplay.v",
     "ModuleLine" : 1,
-    "ModuleName" : "DVI"
-   },
-   {
-    "InstFile" : "C:/Users/Louis/Desktop/fpga/ VideoProc/src/top_module.v",
-    "InstLine" : 31,
-    "InstName" : "u_blinker",
-    "ModuleFile" : "C:/Users/Louis/Desktop/fpga/ VideoProc/src/LedClk.v",
-    "ModuleLine" : 1,
-    "ModuleName" : "led"
+    "ModuleName" : "DVI",
+    "SubInsts" : [
+     {
+      "InstFile" : "C:/Users/Louis/Desktop/fpga/ VideoProc/src/DriveDisplay.v",
+      "InstLine" : 79,
+      "InstName" : "enc_b",
+      "ModuleFile" : "C:/Users/Louis/Desktop/fpga/ VideoProc/src/TMDSEncoder.v",
+      "ModuleLine" : 1,
+      "ModuleName" : "TMDS_encoder"
+     },
+     {
+      "InstFile" : "C:/Users/Louis/Desktop/fpga/ VideoProc/src/DriveDisplay.v",
+      "InstLine" : 87,
+      "InstName" : "enc_g",
+      "ModuleFile" : "C:/Users/Louis/Desktop/fpga/ VideoProc/src/TMDSEncoder.v",
+      "ModuleLine" : 1,
+      "ModuleName" : "TMDS_encoder"
+     },
+     {
+      "InstFile" : "C:/Users/Louis/Desktop/fpga/ VideoProc/src/DriveDisplay.v",
+      "InstLine" : 95,
+      "InstName" : "enc_r",
+      "ModuleFile" : "C:/Users/Louis/Desktop/fpga/ VideoProc/src/TMDSEncoder.v",
+      "ModuleLine" : 1,
+      "ModuleName" : "TMDS_encoder"
+     }
+    ]
    }
   ]
  }

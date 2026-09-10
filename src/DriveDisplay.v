@@ -53,39 +53,59 @@ module DVI
     end
 
     // 2. Generate Sync Pulses (Example placement in the blanking period)
+        
+    reg [7:0] red_8b = 0;
+    reg [7:0] blu_8b = 0;
+    reg [7:0] grn_8b = 0;
+    reg [1:0] whoIncrement = 0;
+    
     always @(posedge pixel_clk) begin
-        //vsync pulses for the vga blanking periods
-        de <= (h_cnt < active_width) && (v_cnt < active_height);
+        de    <= (h_cnt < active_width) && (v_cnt < active_height);
         hsync <= (h_cnt >= 1048) && (h_cnt < 1080);
         vsync <= (v_cnt >= 771)  && (v_cnt < 775);
-    end
-
-    // 3. Hardcoded TMDS Symbols for a Solid Green Screen
-
-    //here if de flag is triggered(aka is inside drawing)
-    wire [9:0] tmds_red   = de ? 10'b1100000000 : 10'b1101010100;
-    wire [9:0] tmds_green = de ? 10'b1000000000 : 10'b1101010100;
-    reg  [9:0] tmds_blue;
-    // we can set those as params later but im a lazy goy
-    //blue is a special boy
-    always @(*) begin
-        if (de) tmds_blue = 10'b1100000000;
-        else begin
-            // Blue channel carries HSYNC and VSYNC during blanking
-            case ({vsync, hsync})
-                2'b00: tmds_blue = 10'b1101010100;
-                2'b01: tmds_blue = 10'b0010101011;
-                2'b10: tmds_blue = 10'b0101010100;
-                2'b11: tmds_blue = 10'b1010101011;
-            endcase
+        
+        if (de) begin
+            red_8b <= h_cnt[7:0];
+            grn_8b <= v_cnt[7:0];
+            blu_8b <= h_cnt[7:0] + v_cnt[7:0];
         end
     end
-    
+
+    // 3. TMDS Encoders
+    wire [9:0] tmds_red, tmds_green, tmds_blue; 
     wire [9:0] tmds_clk = 10'b1111100000; // 50% duty cycle clock symbol
+
+    //these are the tmds encoders
+    TMDS_encoder enc_b (
+        .clk(pixel_clk),
+        .VD(blu_8b),
+        .CD({vsync, hsync}), // Blue channel carries H/V sync
+        .VDE(de),
+        .TMDS(tmds_blue)
+    );
+
+    TMDS_encoder enc_g (
+        .clk(pixel_clk),
+        .VD(grn_8b),
+        .CD(2'b00),          // Green ctrl is always 0
+        .VDE(de),
+        .TMDS(tmds_green)
+    );
+
+    TMDS_encoder enc_r (
+        .clk(pixel_clk),
+        .VD(red_8b),
+        .CD(2'b00),          // Red ctrl is always 0
+        .VDE(de),
+        .TMDS(tmds_red)
+    );
+    
 
     // 4. Gowin High-Speed Serializers (OSER10)
     // Converts parallel 10-bit data into a 279 MHz serial stream
     // the internal registers don't flip fast enough lmao
+    
+
     OSER10 oser_0 (
          // as you can see this just reads the bits
         .Q(Tx_0), .FCLK(serial_clk), .PCLK(pixel_clk), .RESET(reset),
@@ -112,4 +132,5 @@ module DVI
         .D5(tmds_clk[5]), .D6(tmds_clk[6]), .D7(tmds_clk[7]), .D8(tmds_clk[8]), .D9(tmds_clk[9])
     );
     //ideally should produce green on a screen that i dont have access to rn
+
 endmodule

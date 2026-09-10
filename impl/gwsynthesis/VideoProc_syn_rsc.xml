@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Module name="top" Lut="1" T_Register="92(0)" T_Alu="20(0)" T_Lut="207(1)">
+<Module name="top" Lut="1" T_Register="92(0)" T_Alu="20(0)" T_Lut="233(1)">
  <SubModule name="u_pll"/>
- <SubModule name="u_DVI" Register="50" Alu="8" Lut="48" T_Register="92(50)" T_Alu="20(8)" T_Lut="206(48)">
-  <SubModule name="enc_b" Register="14" Alu="4" Lut="54" T_Register="14(14)" T_Alu="4(4)" T_Lut="54(54)"/>
-  <SubModule name="enc_g" Register="14" Alu="4" Lut="50" T_Register="14(14)" T_Alu="4(4)" T_Lut="50(50)"/>
-  <SubModule name="enc_r" Register="14" Alu="4" Lut="54" T_Register="14(14)" T_Alu="4(4)" T_Lut="54(54)"/>
+ <SubModule name="u_DVI" Register="50" Alu="8" Lut="48" T_Register="92(50)" T_Alu="20(8)" T_Lut="232(48)">
+  <SubModule name="enc_b" Register="14" Alu="4" Lut="64" T_Register="14(14)" T_Alu="4(4)" T_Lut="64(64)"/>
+  <SubModule name="enc_g" Register="14" Alu="4" Lut="59" T_Register="14(14)" T_Alu="4(4)" T_Lut="59(59)"/>
+  <SubModule name="enc_r" Register="14" Alu="4" Lut="61" T_Register="14(14)" T_Alu="4(4)" T_Lut="61(61)"/>
  </SubModule>
 </Module>

@@ -2,9 +2,9 @@ GowinSynthesis start
 Running parser ...
 Analyzing Verilog file 'C:\Users\Louis\Desktop\fpga\ VideoProc\src\DriveDisplay.v'
 Analyzing Verilog file 'C:\Users\Louis\Desktop\fpga\ VideoProc\src\LedClk.v'
+Analyzing Verilog file 'C:\Users\Louis\Desktop\fpga\ VideoProc\src\TMDSEncoder.v'
 Analyzing Verilog file 'C:\Users\Louis\Desktop\fpga\ VideoProc\src\clock.v'
 Analyzing Verilog file 'C:\Users\Louis\Desktop\fpga\ VideoProc\src\top_module.v'
-Analyzing Verilog file 'C:\Users\Louis\Desktop\fpga\ VideoProc\src\TMDSEncoder.v'
 Compiling module 'top'("C:\Users\Louis\Desktop\fpga\ VideoProc\src\top_module.v":1)
 Compiling module 'HDMI_clock'("C:\Users\Louis\Desktop\fpga\ VideoProc\src\clock.v":1)
 Compiling module 'DVI'("C:\Users\Louis\Desktop\fpga\ VideoProc\src\DriveDisplay.v":1)

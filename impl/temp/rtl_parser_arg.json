@@ -10,15 +10,15 @@
    "Type" : "verilog"
   },
   {
+   "Path" : "C:/Users/Louis/Desktop/fpga/ VideoProc/src/TMDSEncoder.v",
+   "Type" : "verilog"
+  },
+  {
    "Path" : "C:/Users/Louis/Desktop/fpga/ VideoProc/src/clock.v",
    "Type" : "verilog"
   },
   {
    "Path" : "C:/Users/Louis/Desktop/fpga/ VideoProc/src/top_module.v",
-   "Type" : "verilog"
-  },
-  {
-   "Path" : "C:/Users/Louis/Desktop/fpga/ VideoProc/src/TMDSEncoder.v",
    "Type" : "verilog"
   }
  ],

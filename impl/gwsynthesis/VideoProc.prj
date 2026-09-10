@@ -6,9 +6,9 @@
     <FileList>
         <File path="C:\Users\Louis\Desktop\fpga\ VideoProc\src\DriveDisplay.v" type="verilog"/>
         <File path="C:\Users\Louis\Desktop\fpga\ VideoProc\src\LedClk.v" type="verilog"/>
+        <File path="C:\Users\Louis\Desktop\fpga\ VideoProc\src\TMDSEncoder.v" type="verilog"/>
         <File path="C:\Users\Louis\Desktop\fpga\ VideoProc\src\clock.v" type="verilog"/>
         <File path="C:\Users\Louis\Desktop\fpga\ VideoProc\src\top_module.v" type="verilog"/>
-        <File path="C:\Users\Louis\Desktop\fpga\ VideoProc\src\TMDSEncoder.v" type="verilog"/>
     </FileList>
     <OptionList>
         <Option type="disable_insert_pad" value="0"/>

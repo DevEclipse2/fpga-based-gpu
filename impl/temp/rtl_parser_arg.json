@@ -6,6 +6,10 @@
    "Type" : "verilog"
   },
   {
+   "Path" : "C:/Users/Louis/Desktop/fpga/ VideoProc/src/LedClk.v",
+   "Type" : "verilog"
+  },
+  {
    "Path" : "C:/Users/Louis/Desktop/fpga/ VideoProc/src/clock.v",
    "Type" : "verilog"
   },

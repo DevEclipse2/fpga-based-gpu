@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Module name="top" T_Lut="1(0)">
+<Module name="top" Lut="1" T_Register="26(0)" T_Lut="56(1)">
  <SubModule name="u_pll"/>
- <SubModule name="u_DVI" Lut="1" T_Lut="1(1)"/>
+ <SubModule name="u_DVI" Register="26" Lut="55" T_Register="26(26)" T_Lut="55(55)"/>
 </Module>

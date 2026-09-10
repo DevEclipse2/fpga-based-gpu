@@ -1,0 +1,55 @@
+the memory controller
+
+8 banks
+8192 rows
+1024 word columns
+
+switching rows leads to thrashing
+banks need to be preheated
+columns are fast reads
+writing reading switch requires time
+periodically reheat the ram
+(yes i love food terms)
+
+memory bus : 16 bit (1 word)
+
+reads in bursts
+8 words 
+
+buffers are stored across columns then banks then finally rows
+16kB over 8 banks 
+
+
+memory controller requirements
+buffer mapping and storage lookup tables
+pointer handling
+read & write queue
+8 word storage buffer
+
+priority access to the framebuffer for banks 1-4 every whenever microseconds
+the framebuffer holds 4 pixels inside its registry at a time
+
+
+maximum is 1250mhz but realistically will run at 5-600
+
+32 bit pointer, but can use local 16 bit pointers for internal use
+
+the architecture primarily uses buffers to do stuff 
+buffers are data that can be used in parallel
+
+Buffer wrapper
+10 bit handle (1024 buffers max)
+1 bit lock (from main pc write)
+1 bit read enable (these are kinda like mutexes)
+1 bit write enable
+8 bit offset (data can be up to 256 bytes long) (if its longer uh idk learn optimisation)(this is also like 16 bursts)
+3 bit stride (this is for alignment, up to 8 bits)
+16 bit size (in bytes)
+this means that a single buffer can have multiple things reading off of it at a time
+maximum buffers can allocate around 65 MB of memory (rest in peace my ram was taken for dataceners)
+
+buffers can hold commands, textures, etc
+please DONT copy data
+please DO modify handles
+
+memory is not cleared after use because that eats up precious ram cycles

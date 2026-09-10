@@ -4,7 +4,8 @@ module top(
 //output timer
     output wire tmds_clk_p,
 //output tx as a bus
-    output wire [2:0] tmds_d_p
+    output wire [2:0] tmds_d_p,
+    output wire connection_light
 );
 
     wire clock_pixel;
@@ -26,5 +27,11 @@ module top(
         .Tx_2(tmds_d_p[2]), 
         .Tx_C(tmds_clk_p)
     );
+
+    led u_blinker (
+        .reset(reset),       // reset pin
+        .IO_voltage(connection_light)//indicator light
+    );
+
 
 endmodule

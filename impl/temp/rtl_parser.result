@@ -9,7 +9,7 @@
   "SubInsts" : [
    {
     "InstFile" : "C:/Users/Louis/Desktop/fpga/ VideoProc/src/top_module.v",
-    "InstLine" : 14,
+    "InstLine" : 15,
     "InstName" : "u_pll",
     "ModuleFile" : "C:/Users/Louis/Desktop/fpga/ VideoProc/src/clock.v",
     "ModuleLine" : 1,
@@ -17,11 +17,19 @@
    },
    {
     "InstFile" : "C:/Users/Louis/Desktop/fpga/ VideoProc/src/top_module.v",
-    "InstLine" : 20,
+    "InstLine" : 21,
     "InstName" : "u_DVI",
     "ModuleFile" : "C:/Users/Louis/Desktop/fpga/ VideoProc/src/DriveDisplay.v",
     "ModuleLine" : 1,
     "ModuleName" : "DVI"
+   },
+   {
+    "InstFile" : "C:/Users/Louis/Desktop/fpga/ VideoProc/src/top_module.v",
+    "InstLine" : 31,
+    "InstName" : "u_blinker",
+    "ModuleFile" : "C:/Users/Louis/Desktop/fpga/ VideoProc/src/LedClk.v",
+    "ModuleLine" : 1,
+    "ModuleName" : "led"
    }
   ]
  }

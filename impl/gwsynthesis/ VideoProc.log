@@ -1,0 +1,7 @@
+GowinSynthesis start
+Running parser ...
+Analyzing Verilog file 'C:\Users\Louis\Desktop\fpga\ VideoProc\src\DriveDisplay.v'
+Analyzing Verilog file 'C:\Users\Louis\Desktop\fpga\ VideoProc\src\clock.v'
+Analyzing Verilog file 'C:\Users\Louis\Desktop\fpga\ VideoProc\src\top_module.v'
+ERROR (EX0302) : No valid top module found
+GowinSynthesis finish

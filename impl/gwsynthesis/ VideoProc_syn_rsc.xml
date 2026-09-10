@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Module name="top_module" Lut="1" T_Lut="1(1)">
+ <SubModule name="u_pll"/>
+</Module>

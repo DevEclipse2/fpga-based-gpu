@@ -1,0 +1,4 @@
+Reading netlist file: "C:\Users\Louis\Desktop\fpga\ VideoProc\impl\gwsynthesis\ VideoProc.vg"
+Parsing netlist file "C:\Users\Louis\Desktop\fpga\ VideoProc\impl\gwsynthesis\ VideoProc.vg" completed
+ERROR  (PA2050) : Module 'DVI' is instantiated but not defined
+NOTE  (PA0005) : Processing netlist completed with errors

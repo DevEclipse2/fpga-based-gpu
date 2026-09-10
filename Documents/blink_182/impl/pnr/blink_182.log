@@ -1,0 +1,30 @@
+Reading netlist file: "C:\Users\Louis\Desktop\fpga\ VideoProc\Documents\blink_182\impl\gwsynthesis\blink_182.vg"
+Parsing netlist file "C:\Users\Louis\Desktop\fpga\ VideoProc\Documents\blink_182\impl\gwsynthesis\blink_182.vg" completed
+Processing netlist completed
+Reading constraint file: "C:\Users\Louis\Desktop\fpga\ VideoProc\Documents\blink_182\src\blink_182.cst"
+Physical Constraint parsed completed
+Running placement......
+[10%] Placement Phase 0 completed
+[20%] Placement Phase 1 completed
+[30%] Placement Phase 2 completed
+WARN  (TA1132) :  'Clock' was determined to be a clock but was not created.
+[50%] Placement Phase 3 completed
+Running routing......
+[60%] Routing Phase 0 completed
+[70%] Routing Phase 1 completed
+[80%] Routing Phase 2 completed
+[90%] Routing Phase 3 completed
+Running timing analysis......
+[95%] Timing analysis completed
+Placement and routing completed
+Bitstream generation in progress......
+Bitstream generation completed
+Running power analysis......
+[100%] Power analysis completed
+Generate file "C:\Users\Louis\Desktop\fpga\ VideoProc\Documents\blink_182\impl\pnr\blink_182.power.html" completed
+Generate file "C:\Users\Louis\Desktop\fpga\ VideoProc\Documents\blink_182\impl\pnr\blink_182.pin.html" completed
+Generate file "C:\Users\Louis\Desktop\fpga\ VideoProc\Documents\blink_182\impl\pnr\blink_182.rpt.html" completed
+Generate file "C:\Users\Louis\Desktop\fpga\ VideoProc\Documents\blink_182\impl\pnr\blink_182.rpt.txt" completed
+Generate file "C:\Users\Louis\Desktop\fpga\ VideoProc\Documents\blink_182\impl\pnr\blink_182.tr.html" completed
+Wed Sep  9 23:07:27 2026
+

@@ -14,8 +14,8 @@ WARN  (EX3791) : Expression size 12 truncated to fit in target size 11("C:\Users
 WARN  (EX3791) : Expression size 13 truncated to fit in target size 12("C:\Users\Louis\Desktop\fpga\ VideoProc\src\DriveDisplay.v":68)
 Compiling module 'TMDS_encoder'("C:\Users\Louis\Desktop\fpga\ VideoProc\src\TMDSEncoder.v":1)
 Compiling module 'badapple'("C:\Users\Louis\Desktop\fpga\ VideoProc\src\BadApple.v":1)
-Extracting RAM for identifier 'read_buf'("C:\Users\Louis\Desktop\fpga\ VideoProc\src\BadApple.v":20)
-Compiling module 'flash_reader(START_ADDR=24'h100000)'("C:\Users\Louis\Desktop\fpga\ VideoProc\src\spi_reader.v":1)
+Extracting RAM for identifier 'read_buf'("C:\Users\Louis\Desktop\fpga\ VideoProc\src\BadApple.v":21)
+Compiling module 'flash_reader'("C:\Users\Louis\Desktop\fpga\ VideoProc\src\spi_reader.v":1)
 WARN  (EX2565) : Input 'base_clk' on this instance is undriven. Assigning to 0, simulation mismatch possible. Please assign the input or remove the declaration("C:\Users\Louis\Desktop\fpga\ VideoProc\src\top_module.v":38)
 NOTE  (EX0101) : Current top module is "top"
 [5%] Running netlist conversion ...

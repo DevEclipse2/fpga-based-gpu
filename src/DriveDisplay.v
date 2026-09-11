@@ -83,7 +83,7 @@ module DVI
         vsync <= (v_cnt >= 771)  && (v_cnt < 775);
         
         if (de) begin
-            if(!switch_color) begin
+            if(switch_color) begin
             red_8b <= 8'b00000000;
             grn_8b <= 8'b00000000;
             blu_8b <= 8'b00000000;
@@ -129,6 +129,7 @@ module DVI
         .invert(switch_color),
         .VDE(de),               //if data is enabled increment clock
         .vsync(newframe),
+        .isHDMIHOT(!reset),
         .spi_cs_n(spi_cs_n),
         .spi_sclk(spi_sclk),
         .spi_miso(spi_miso),

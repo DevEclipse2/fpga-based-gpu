@@ -65,7 +65,7 @@
       "SubInsts" : [
        {
         "InstFile" : "C:/Users/Louis/Desktop/fpga/ VideoProc/src/BadApple.v",
-        "InstLine" : 121,
+        "InstLine" : 131,
         "InstName" : "u_reader",
         "ModuleFile" : "C:/Users/Louis/Desktop/fpga/ VideoProc/src/spi_reader.v",
         "ModuleLine" : 1,

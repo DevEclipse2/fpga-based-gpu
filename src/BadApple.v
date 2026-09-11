@@ -3,6 +3,7 @@ module badapple
     input pixel_clock, // 56 ish mhz
     input VDE,
     input vsync,
+    input isHDMIHOT,
     input  wire spi_miso,
     output wire spi_cs_n,
     output wire spi_sclk,
@@ -31,32 +32,49 @@ module badapple
     wire       spi_valid;
     wire [9:0] spi_data;
 
-    wire requirement_met = (!VDE && empty_banks > 6'd12) || (VDE && empty_banks > 6'd20);
-    wire fifo_full_signal = (empty_banks == 6'd0) || !requirement_met;
     reg consumed_this_cycle;
     reg startup_lock = 1'b1;
-    reg [7:0] boot_delay = 8'd0;
+    reg [15:0] boot_delay = 16'd0;
 
     reg reader_rst_n = 1'b0;
     reg vsync_d = 1'b0;
     wire frame_start = (vsync_d && !vsync); // Falling edge of vsync
     reg running = 1'b0;
 
+
+    wire fifo_empty = (empty_banks == 6'd32);
+    // Simple, safe backpressure: pause SPI when less than 4 banks are empty
+    wire fifo_full_signal = (empty_banks < 6'd4); 
+
+    reg armed = 1'b0;
+
     always @(posedge pixel_clock) begin
         //this iterates pixel_counter 
-        
-        
-
-        if (startup_lock && empty_banks < 6'd16) begin
-            startup_lock <= 1'b0;
-        end
+        vsync_d <= vsync;
         if (boot_delay != 8'hFF) begin
             boot_delay <= boot_delay + 1'b1;
             reader_rst_n <= 1'b0;
-        end else begin
-            reader_rst_n <= 1'b1; // Release reset
-            vsync_d <= vsync;
-        end
+            running <= 1'b0;
+            armed <= 1'b0;
+            buffer_index <= 5'd0;
+            fill_index <= 5'd0;
+            empty_banks <= 6'd32;
+            pixel_counter <= 10'd1;
+            current_is_white <= 1'b0;
+        end 
+        else begin
+            reader_rst_n <= 1'b1; // Wake up SPI Reader
+
+            // Wait for FIFO to safely pre-load at least 20 words
+            if (!armed && (empty_banks < 6'd12)) begin
+                armed <= 1'b1;
+            end
+
+            // Lock to the exact start of a frame (vsync falling edge)
+            if (armed && !running && (vsync_d && !vsync)) begin
+                running <= 1'b1;
+                // Note: We DO NOT reset buffer_index here. It was primed by the reader.
+            end
 
         //a 1 frame delay is written to the registers
         //a frame is 935360
@@ -69,16 +87,8 @@ module badapple
         
         consumed_this_cycle = 1'b0;
 
-
-        if (!running) begin
-            current_is_white <= 1'b0;
-            pixel_counter <= 10'd1;
-            if (!startup_lock && frame_start) begin
-                running <= 1'b1;
-            end
-        end 
-        else begin
-        if(VDE && !startup_lock) begin
+        
+        if(VDE && running && !fifo_empty) begin
             if (pixel_counter == read_buf[buffer_index]) begin
                 if (pixel_counter != 10'd1023) begin //not a special char
                     current_is_white <= ~current_is_white;
@@ -92,8 +102,8 @@ module badapple
                 pixel_counter <= pixel_counter + 1'b1;
                 //bs pattern to test
             end
-        end 
         end
+end
         
         if (spi_valid) begin
             // 10-bit word drops perfectly into the array natively

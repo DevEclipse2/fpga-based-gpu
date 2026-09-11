@@ -9,10 +9,15 @@ module DVI
     input serial_clk,
     input pixel_clk,
     input reset,
+    input base_clk,
     output Tx_0,
     output Tx_1,
     output Tx_2, 
-    output Tx_C
+    output Tx_C,
+    output wire spi_cs_n,
+    output wire spi_sclk,
+    output wire spi_mosi,
+    input  wire spi_miso
 );
 
 //timing system : 56 ish MHZ for 1024 x 768 screen
@@ -27,7 +32,14 @@ module DVI
     reg [10:0] v_cnt = 0;
     
     reg de, hsync, vsync;
-
+    
+    wire switch_color; //starts off black
+    
+//    always @(posedge switch_color) begin
+//        isblack <= ~isblack; //flip
+//    end
+    
+    reg newframe;
     // 1. Beam Tracking (VGA Counters)
     // for rising edge of the pixel clock
     // or the rising edge of the reset flag
@@ -43,8 +55,14 @@ module DVI
                 //resets horizontal counter
                 h_cnt <= 0;
                 //checks if full screen
-                if (v_cnt == full_height - 1) v_cnt <= 0;
-                else v_cnt <= v_cnt + 1;
+                if (v_cnt == full_height - 1) begin
+                    v_cnt <= 0; //full screen done 
+                    newframe <= 1'b1;
+                end
+                else begin
+                    v_cnt <= v_cnt + 1;
+                    newframe <= 1'b0;
+                end
             end else begin
                 //moves the piss beam (tm) to the right
                 h_cnt <= h_cnt + 1;
@@ -65,9 +83,15 @@ module DVI
         vsync <= (v_cnt >= 771)  && (v_cnt < 775);
         
         if (de) begin
-            red_8b <= h_cnt[7:0];
-            grn_8b <= v_cnt[7:0];
-            blu_8b <= h_cnt[7:0] + v_cnt[7:0];
+            if(!switch_color) begin
+            red_8b <= 8'b00000000;
+            grn_8b <= 8'b00000000;
+            blu_8b <= 8'b00000000;
+            end else begin
+            red_8b <= 8'b11111111;
+            grn_8b <= 8'b11111111;
+            blu_8b <= 8'b11111111;
+            end
         end
     end
 
@@ -100,6 +124,16 @@ module DVI
         .TMDS(tmds_red)
     );
     
+    badapple u_apple (
+        .pixel_clock(pixel_clk),
+        .invert(switch_color),
+        .VDE(de),               //if data is enabled increment clock
+        .vsync(newframe),
+        .spi_cs_n(spi_cs_n),
+        .spi_sclk(spi_sclk),
+        .spi_miso(spi_miso),
+        .spi_mosi(spi_mosi)
+    );
 
     // 4. Gowin High-Speed Serializers (OSER10)
     // Converts parallel 10-bit data into a 279 MHz serial stream

@@ -2,6 +2,10 @@
  "Device" : "GW2A-18C",
  "Files" : [
   {
+   "Path" : "C:/Users/Louis/Desktop/fpga/ VideoProc/src/BadApple.v",
+   "Type" : "verilog"
+  },
+  {
    "Path" : "C:/Users/Louis/Desktop/fpga/ VideoProc/src/DriveDisplay.v",
    "Type" : "verilog"
   },
@@ -15,6 +19,10 @@
   },
   {
    "Path" : "C:/Users/Louis/Desktop/fpga/ VideoProc/src/clock.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "C:/Users/Louis/Desktop/fpga/ VideoProc/src/spi_reader.v",
    "Type" : "verilog"
   },
   {

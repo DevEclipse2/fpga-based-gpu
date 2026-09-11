@@ -4,10 +4,12 @@
     <Version>beta</Version>
     <Device id="GW2A-18C" package="PBGA256" speed="8" partNumber="GW2A-LV18PG256C8/I7"/>
     <FileList>
+        <File path="C:\Users\Louis\Desktop\fpga\ VideoProc\src\BadApple.v" type="verilog"/>
         <File path="C:\Users\Louis\Desktop\fpga\ VideoProc\src\DriveDisplay.v" type="verilog"/>
         <File path="C:\Users\Louis\Desktop\fpga\ VideoProc\src\LedClk.v" type="verilog"/>
         <File path="C:\Users\Louis\Desktop\fpga\ VideoProc\src\TMDSEncoder.v" type="verilog"/>
         <File path="C:\Users\Louis\Desktop\fpga\ VideoProc\src\clock.v" type="verilog"/>
+        <File path="C:\Users\Louis\Desktop\fpga\ VideoProc\src\spi_reader.v" type="verilog"/>
         <File path="C:\Users\Louis\Desktop\fpga\ VideoProc\src\top_module.v" type="verilog"/>
     </FileList>
     <OptionList>

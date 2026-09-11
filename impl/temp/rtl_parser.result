@@ -17,7 +17,7 @@
   "SubInsts" : [
    {
     "InstFile" : "C:/Users/Louis/Desktop/fpga/ VideoProc/src/top_module.v",
-    "InstLine" : 14,
+    "InstLine" : 20,
     "InstName" : "u_pll",
     "ModuleFile" : "C:/Users/Louis/Desktop/fpga/ VideoProc/src/clock.v",
     "ModuleLine" : 1,
@@ -25,7 +25,7 @@
    },
    {
     "InstFile" : "C:/Users/Louis/Desktop/fpga/ VideoProc/src/top_module.v",
-    "InstLine" : 20,
+    "InstLine" : 26,
     "InstName" : "u_DVI",
     "ModuleFile" : "C:/Users/Louis/Desktop/fpga/ VideoProc/src/DriveDisplay.v",
     "ModuleLine" : 1,
@@ -33,7 +33,7 @@
     "SubInsts" : [
      {
       "InstFile" : "C:/Users/Louis/Desktop/fpga/ VideoProc/src/DriveDisplay.v",
-      "InstLine" : 79,
+      "InstLine" : 103,
       "InstName" : "enc_b",
       "ModuleFile" : "C:/Users/Louis/Desktop/fpga/ VideoProc/src/TMDSEncoder.v",
       "ModuleLine" : 1,
@@ -41,7 +41,7 @@
      },
      {
       "InstFile" : "C:/Users/Louis/Desktop/fpga/ VideoProc/src/DriveDisplay.v",
-      "InstLine" : 87,
+      "InstLine" : 111,
       "InstName" : "enc_g",
       "ModuleFile" : "C:/Users/Louis/Desktop/fpga/ VideoProc/src/TMDSEncoder.v",
       "ModuleLine" : 1,
@@ -49,11 +49,29 @@
      },
      {
       "InstFile" : "C:/Users/Louis/Desktop/fpga/ VideoProc/src/DriveDisplay.v",
-      "InstLine" : 95,
+      "InstLine" : 119,
       "InstName" : "enc_r",
       "ModuleFile" : "C:/Users/Louis/Desktop/fpga/ VideoProc/src/TMDSEncoder.v",
       "ModuleLine" : 1,
       "ModuleName" : "TMDS_encoder"
+     },
+     {
+      "InstFile" : "C:/Users/Louis/Desktop/fpga/ VideoProc/src/DriveDisplay.v",
+      "InstLine" : 127,
+      "InstName" : "u_apple",
+      "ModuleFile" : "C:/Users/Louis/Desktop/fpga/ VideoProc/src/BadApple.v",
+      "ModuleLine" : 1,
+      "ModuleName" : "badapple",
+      "SubInsts" : [
+       {
+        "InstFile" : "C:/Users/Louis/Desktop/fpga/ VideoProc/src/BadApple.v",
+        "InstLine" : 121,
+        "InstName" : "u_reader",
+        "ModuleFile" : "C:/Users/Louis/Desktop/fpga/ VideoProc/src/spi_reader.v",
+        "ModuleLine" : 1,
+        "ModuleName" : "flash_reader"
+       }
+      ]
      }
     ]
    }

@@ -12,27 +12,27 @@
   <Part Number>: GW2A-LV18PG256C8/I7
   <Device>: GW2A-18
   <Device Version>: C
-  <Created Time>:Fri Sep 11 23:58:25 2026
+  <Created Time>:Sat Sep 12 13:12:00 2026
 
 
 2. PnR Details
 
   Running placement:
-    Placement Phase 0: CPU time = 0h 0m 0.028s, Elapsed time = 0h 0m 0.028s
-    Placement Phase 1: CPU time = 0h 0m 0.409s, Elapsed time = 0h 0m 0.409s
-    Placement Phase 2: CPU time = 0h 0m 0.053s, Elapsed time = 0h 0m 0.053s
-    Placement Phase 3: CPU time = 0h 0m 2s, Elapsed time = 0h 0m 2s
-    Total Placement: CPU time = 0h 0m 2s, Elapsed time = 0h 0m 2s
+    Placement Phase 0: CPU time = 0h 0m 0.051s, Elapsed time = 0h 0m 0.051s
+    Placement Phase 1: CPU time = 0h 0m 0.6s, Elapsed time = 0h 0m 0.601s
+    Placement Phase 2: CPU time = 0h 0m 0.079s, Elapsed time = 0h 0m 0.079s
+    Placement Phase 3: CPU time = 0h 0m 3s, Elapsed time = 0h 0m 3s
+    Total Placement: CPU time = 0h 0m 3s, Elapsed time = 0h 0m 3s
  Running routing:
-    Routing Phase 0: CPU time = 0h 0m 0.001s, Elapsed time = 0h 0m 0s
-    Routing Phase 1: CPU time = 0h 0m 0.774s, Elapsed time = 0h 0m 0.774s
-    Routing Phase 2: CPU time = 0h 0m 0.531s, Elapsed time = 0h 0m 0.531s
+    Routing Phase 0: CPU time = 0h 0m 0s, Elapsed time = 0h 0m 0s
+    Routing Phase 1: CPU time = 0h 0m 0.853s, Elapsed time = 0h 0m 0.853s
+    Routing Phase 2: CPU time = 0h 0m 0.576s, Elapsed time = 0h 0m 0.576s
     Routing Phase 3: CPU time = 0h 0m 0s, Elapsed time = 0h 0m 0s
     Total Routing: CPU time = 0h 0m 1s, Elapsed time = 0h 0m 1s
  Generate output files:
-    CPU time = 0h 0m 4s, Elapsed time = 0h 0m 4s
+    CPU time = 0h 0m 6s, Elapsed time = 0h 0m 6s
 
- Total Time and Memory Usage: CPU time = 0h 0m 8s, Elapsed time = 0h 0m 8s, Peak memory usage = 514MB
+ Total Time and Memory Usage: CPU time = 0h 0m 11s, Elapsed time = 0h 0m 11s, Peak memory usage = 414MB
 
 
 3. Resource Usage Summary
@@ -40,15 +40,15 @@
   --------------------------------------------------------------------------------
   Resources                   | Usage                               | Utilization
   --------------------------------------------------------------------------------
-  Logic                       | 254/20736                           |  2%
-    --LUT,ALU,ROM16           | 218(170 LUT, 48 ALU, 0 ROM16)       | -
+  Logic                       | 255/20736                           |  2%
+    --LUT,ALU,ROM16           | 219(171 LUT, 48 ALU, 0 ROM16)       | -
     --SSRAM(RAM16)            | 6                                   | -
-  Register                    | 135/16173                           |  <1%
+  Register                    | 138/16173                           |  <1%
     --Logic Register as Latch | 0/15552                             |  0%
-    --Logic Register as FF    | 131/15552                           |  <1%
+    --Logic Register as FF    | 135/15552                           |  <1%
     --I/O Register as Latch   | 0/621                               |  0%
-    --I/O Register as FF      | 4/621                               |  <1%
-  CLS                         | 153/10368                           |  2%
+    --I/O Register as FF      | 3/621                               |  <1%
+  CLS                         | 154/10368                           |  2%
   I/O Port                    | 10/207                              |  5%
   I/O Buf                     | 10                                  | -
     --Input Buf               | 3                                   | -

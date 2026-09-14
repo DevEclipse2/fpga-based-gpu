@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Module name="top" Lut="1" T_Register="135(0)" T_Alu="41(0)" T_Lut="177(1)" T_Ssram="6(0)">
+<Module name="top" Lut="1" T_Register="138(0)" T_Alu="41(0)" T_Lut="178(1)" T_Ssram="6(0)">
  <SubModule name="u_pll"/>
- <SubModule name="u_DVI" Register="28" Lut="52" T_Register="135(28)" T_Alu="41(0)" T_Lut="176(52)" T_Ssram="6(0)">
+ <SubModule name="u_DVI" Register="28" Lut="52" T_Register="138(28)" T_Alu="41(0)" T_Lut="177(52)" T_Ssram="6(0)">
   <SubModule name="enc_b" Register="8" Alu="4" Lut="9" T_Register="8(8)" T_Alu="4(4)" T_Lut="9(9)"/>
   <SubModule name="enc_g" Register="7" Alu="4" Lut="5" T_Register="7(7)" T_Alu="4(4)" T_Lut="5(5)"/>
   <SubModule name="enc_r" Register="8" Alu="4" Lut="6" T_Register="8(8)" T_Alu="4(4)" T_Lut="6(6)"/>
-  <SubModule name="u_apple" Register="48" Alu="29" Lut="66" Ssram="6" T_Register="84(48)" T_Alu="29(29)" T_Lut="104(66)" T_Ssram="6(6)">
-   <SubModule name="u_reader" Register="36" Lut="38" T_Register="36(36)" T_Lut="38(38)"/>
+  <SubModule name="u_apple" Register="48" Alu="29" Lut="66" Ssram="6" T_Register="87(48)" T_Alu="29(29)" T_Lut="105(66)" T_Ssram="6(6)">
+   <SubModule name="u_reader" Register="39" Lut="39" T_Register="39(39)" T_Lut="39(39)"/>
   </SubModule>
  </SubModule>
 </Module>

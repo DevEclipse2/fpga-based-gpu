@@ -127,7 +127,7 @@ end
     assign invert = current_is_white;
     //assign invert = current_is_white ^ past_is_white; //im damn smart
     flash_reader #(
-        .START_ADDR(24'h100000)
+        .START_ADDR(24'h090000)
     ) u_reader (
         .clk(pixel_clock),
         .rst_n(reader_rst_n), 

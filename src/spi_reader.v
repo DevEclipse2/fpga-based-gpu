@@ -18,16 +18,16 @@ module flash_reader #(
 );
 
     // --------------------------------------------------------
-    // Clock Divider: 14 MHz SPI Clock
+    // Clock Divider: 28 MHz SPI Clock
     // --------------------------------------------------------
-    reg [1:0] clk_div;
-    wire tick_fall = (clk_div == 2'b01); // Update MOSI / Drop SCLK
-    wire tick_rise = (clk_div == 2'b11); // Sample MISO / Raise SCLK
+reg clk_div = 1'b0;
+wire tick_fall = (clk_div == 1'b0); // Update MOSI / Drop SCLK
+wire tick_rise = (clk_div == 1'b1); // Sample MISO / Raise SCLK
 
-    always @(posedge clk or negedge rst_n) begin
-        if (!rst_n) clk_div <= 2'b00;
-        else clk_div <= clk_div + 1'b1;
-    end
+always @(posedge clk or negedge rst_n) begin
+    if (!rst_n) clk_div <= 1'b0;
+    else clk_div <= ~clk_div;
+end
 
     // --------------------------------------------------------
     // SPI State Machine
@@ -100,16 +100,15 @@ module flash_reader #(
                         end
                     end
                 end
-
                 S_PAUSE: begin
-                    if (tick_fall) begin
-                        spi_sclk <= 1'b0; // Safely park clock low
-                    end
-                    // Flash chip stays active (spi_cs_n is still 0).
-                    // We simply wait for the FIFO to free up space.
-                    if (!fifo_full) begin
-                        state <= S_READ_10BIT;
-                    end
+                if (tick_fall) begin
+                    spi_sclk <= 1'b0; // Safely park clock low
+                end
+                
+                // CRITICAL FIX: Only exit pause on tick_fall to prevent dropped bits
+                if (!fifo_full && tick_fall) begin
+                    state <= S_READ_10BIT;
+                end
                 end
             endcase
         end
